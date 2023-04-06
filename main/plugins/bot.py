@@ -47,7 +47,7 @@ async def run(event):
         await event.edit("Incorrect format")
         return
     if c[4] == "True":
-        media==True
+        await clone(event.client, int(c[1]), int(c[2]), int(c[3]), media_only=True)
     else:
-        media==False 
-    await clone(event.client, int(c[1]), int(c[2]), int(c[3]), media_only=media)
+        await clone(event.client, int(c[1]), int(c[2]), int(c[3]), media_only=False)
+    
