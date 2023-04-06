@@ -8,7 +8,7 @@ async def clone(bot, source, destination, msg_id, media_only=True):
     async for msg in bot.iter_messages(int(source), min_id=int(msg_id), reverse=True):
         try:
             await asyncio.sleep(3)
-            if media_only=False:
+            if media_only == False:
                 try:
                     await bot.send_message(destination, msg)
                     return
@@ -47,7 +47,7 @@ async def run(event):
         await event.edit("Incorrect format")
         return
     if c[4] == "True":
-        media=True
+        media==True
     else:
-        media=False 
+        media==False 
     await clone(event.client, int(c[1]), int(c[2]), int(c[3]), media_only=media)
