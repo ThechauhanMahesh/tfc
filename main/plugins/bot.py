@@ -33,8 +33,7 @@ async def clone(bot, source, destination, msg_id, media_only=True):
                     await bot.send_file(
                         destination, media, caption=msg.text, link_preview=False
                     )
-                finally:
-                    return
+                return
             else:
                 return
         except Exception as exc:
