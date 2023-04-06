@@ -11,12 +11,8 @@ async def clone(bot, source, destination, msg_id, media_only=True):
             if media_only == False:
                 try:
                     await bot.send_message(destination, msg)
-                    return
                 except Exception as exc:
                     print(str(exc))
-                    return
-            if msg.poll:
-                return
             if msg.photo:
                 photo=msg.media.photo
                 await bot.send_file(
@@ -33,9 +29,6 @@ async def clone(bot, source, destination, msg_id, media_only=True):
                     await bot.send_file(
                         destination, media, caption=msg.text, link_preview=False
                     )
-                return
-            else:
-                return
         except Exception as exc:
             print(str(exc))
 
