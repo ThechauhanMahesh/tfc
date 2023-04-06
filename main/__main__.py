@@ -2,7 +2,7 @@ import glob
 from pathlib import Path
 from main.utils import load_plugins
 import logging
-from . import Drone
+from . import bot
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
@@ -17,4 +17,4 @@ for name in files:
 
 print("Successfully deployed!")
 if __name__ == "__main__":
-    Drone.run_until_disconnected()
+    bot.run_until_disconnected()
